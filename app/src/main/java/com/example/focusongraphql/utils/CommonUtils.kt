@@ -1,9 +1,14 @@
 package com.example.focusongraphql.utils
 
+import android.app.Activity
 import android.content.Context
 import android.graphics.Color
+import android.os.Build
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowCompat
 import com.example.focusongraphql.network.models.Continent
 import com.example.focusongraphql.network.models.Country
 import com.kotlin.graphql.FindContriesOfAContinentQuery
@@ -58,4 +63,9 @@ fun convertToCountryDataModel(toList: List<FindContriesOfAContinentQuery.Country
         )
     }
     return countriesList
+}
+
+fun AppCompatActivity.makeStatusBarTransparentAndContentFullScreen() {
+    window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
+            View.SYSTEM_UI_FLAG_LAYOUT_STABLE
 }

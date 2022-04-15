@@ -28,12 +28,19 @@ class CountriesActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        makeStatusBarTransparentAndContentFullScreen()
+
         binding = ActivityCountriesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.title = intent.extras?.get(SELECTED_CONTINENT) as String
-        supportActionBar?.subtitle = "List of countries"
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        binding.apply {
+
+            tvHeader.text = "Countries in ${intent.extras?.get(SELECTED_CONTINENT)}"
+            imgBackToContinents.setOnClickListener {
+                onBackPressed()
+            }
+        }
 
         getListOfCountries(intent.extras?.get(SELECTED_CODE) as String)
     }
