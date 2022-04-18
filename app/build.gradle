@@ -80,5 +80,5 @@ dependencies {
 }
 
 apollo {
-    packageName.set("com.kotlin.graphql")
+    packageName.set("com.example.focusongraphql")
 }

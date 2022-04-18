@@ -1,18 +1,14 @@
 package com.example.focusongraphql.utils
 
-import android.app.Activity
 import android.content.Context
 import android.graphics.Color
-import android.os.Build
 import android.view.View
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
+import com.example.focusongraphql.FindContriesOfAContinentQuery
+import com.example.focusongraphql.GetContinentsQuery
 import com.example.focusongraphql.network.models.Continent
 import com.example.focusongraphql.network.models.Country
-import com.kotlin.graphql.FindContriesOfAContinentQuery
-import com.kotlin.graphql.GetContinentsQuery
 import kotlin.random.Random
 
 const val SELECTED_CODE = "SELECTED_CODE"

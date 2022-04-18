@@ -1,8 +1,8 @@
 package com.example.focusongraphql.repository
 
 import com.apollographql.apollo3.ApolloClient
-import com.kotlin.graphql.FindContriesOfAContinentQuery
-import com.kotlin.graphql.GetContinentsQuery
+import com.example.focusongraphql.FindContriesOfAContinentQuery
+import com.example.focusongraphql.GetContinentsQuery
 
 class MainRepository(private val apolloClient: ApolloClient) {
 

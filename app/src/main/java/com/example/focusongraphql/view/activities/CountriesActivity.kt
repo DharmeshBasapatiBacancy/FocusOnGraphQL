@@ -1,6 +1,5 @@
 package com.example.focusongraphql.view.activities
 
-import android.R
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -8,6 +7,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.focusongraphql.R
 import com.example.focusongraphql.databinding.ActivityCountriesBinding
 import com.example.focusongraphql.network.models.Country
 import com.example.focusongraphql.utils.*
@@ -47,7 +47,7 @@ class CountriesActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.home -> {
+            android.R.id.home -> {
                 onBackPressed()
                 true
             }

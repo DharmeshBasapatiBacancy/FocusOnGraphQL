@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto">
 
     <data>
@@ -17,75 +18,73 @@
         card_view:cardCornerRadius="@dimen/_10sdp"
         card_view:cardUseCompatPadding="true">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/lnrCountry"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/country_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:orientation="vertical"
-                android:padding="@dimen/_10sdp">
+                android:padding="@dimen/_10sdp"
+                android:text="@{country.name + ` ` + country.emoji}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_17ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/country_phone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/country_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="@{country.name + ` ` + country.emoji}"
-                    android:textColor="@android:color/black"
-                    android:textSize="@dimen/_17ssp"
-                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/country_native"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:text="@{`Native:` + country.native}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toStartOf="@id/country_currency"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/country_name" />
 
-                <TextView
-                    android:id="@+id/country_native"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="@{`Native:` + country.native}"
-                    android:textColor="@android:color/black"
-                    android:textSize="@dimen/_12ssp"
-                    android:textStyle="italic" />
 
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/country_phone"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
+                android:drawablePadding="@dimen/_10sdp"
                 android:gravity="center_vertical"
-                android:orientation="vertical"
-                android:padding="@dimen/_10sdp">
+                android:lines="1"
+                android:padding="@dimen/_10sdp"
+                android:text="@{country.phone}"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:drawableLeftCompat="@drawable/phone"
+                app:layout_constraintBottom_toTopOf="@id/country_currency"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/country_phone"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:drawableLeft="@drawable/phone"
-                    android:drawablePadding="10dp"
-                    android:gravity="center_vertical"
-                    android:text="@{country.phone}"
-                    android:textColor="@android:color/black"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/country_currency"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:padding="@dimen/_10sdp"
+                android:text="@{country.currency}"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:drawableLeftCompat="@drawable/currency"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/country_phone" />
 
-                <TextView
-                    android:id="@+id/country_currency"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:drawableLeft="@drawable/currency"
-                    android:drawablePadding="10dp"
-                    android:gravity="center_vertical"
-                    android:text="@{country.currency}"
-                    android:textColor="@android:color/black"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>
