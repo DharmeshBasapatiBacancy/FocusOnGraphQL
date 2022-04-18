@@ -4,6 +4,7 @@ plugins {
     id 'com.apollographql.apollo3'
     id 'dagger.hilt.android.plugin'
     id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -44,6 +45,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
@@ -52,6 +54,7 @@ dependencies {
     def lifecycle_viewmodel_version = "2.5.0-alpha06"
     def dagger_hilt_version = "2.40"
     def coroutines_flow_version = "1.6.1"
+    def navigation_version = "2.4.2"
 
     implementation 'com.apollographql.apollo3:apollo-runtime:3.2.1'
 
@@ -77,6 +80,10 @@ dependencies {
     //Coroutines & Flow
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_flow_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_flow_version"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
 }
 
 apollo {

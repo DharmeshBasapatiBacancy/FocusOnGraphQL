@@ -2,4 +2,6 @@
     <string name="app_name">In The World</string>
     <string name="back_button">Back Button</string>
     <string name="continents_on_planet_earth">Continents on Planet Earth</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main.xml"
+    app:startDestination="@id/continentsFragment">
+
+    <fragment
+        android:id="@+id/continentsFragment"
+        tools:layout="@layout/fragment_continents"
+        android:name="com.example.focusongraphql.view.fragments.ContinentsFragment"
+        android:label="ContinentsFragment" >
+        <action
+            android:id="@+id/action_continentsFragment_to_countriesFragment"
+            app:destination="@id/countriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/countriesFragment"
+        tools:layout="@layout/fragment_countries"
+        android:name="com.example.focusongraphql.view.fragments.CountriesFragment"
+        android:label="CountriesFragment" >
+        <argument
+            android:name="code"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+</navigation>
